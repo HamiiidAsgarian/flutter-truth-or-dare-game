@@ -61,12 +61,6 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   });
                   widget.onListChange(names);
                 }),
-            // NextSection(onNext: () {
-            //   Navigator.push(
-            //       context,
-            //       MaterialPageRoute(
-            //           builder: (context) => WheelScreen(names: names)));
-            // })
           ],
         ),
       ),

@@ -120,7 +120,7 @@ class _ChoiceScreenState extends State<ChoiceScreen>
                 ),
                 Align(
                     alignment: Alignment(
-                        -(_animCntrl.value - 0.1), (_animCntrl.value)),
+                        (_animCntrl.value - 0.04), (_animCntrl.value)),
                     child: OptionCard(
                       onTap: () {
                         runAnimationForward();
@@ -131,19 +131,8 @@ class _ChoiceScreenState extends State<ChoiceScreen>
                       //     Random().nextInt(widget.truthList.length - 1)],
                     )),
                 Align(
-                    alignment:
-                        Alignment((_animCntrl.value - 0.1), (_animCntrl.value)),
-                    child: OptionCard(
-                        // cardQuestion: widget.truthList[
-                        //     Random().nextInt(widget.truthList.length - 1)],
-                        onTap: () {
-                          runAnimationForward();
-                          onTapQuestionCard(CardType.truth);
-                        },
-                        cardType: QuestionCard.truth())),
-                Align(
                     alignment: Alignment(
-                        -(_animCntrl.value - 0.1), -(_animCntrl.value - 0.1)),
+                        -(_animCntrl.value - 0.04), (_animCntrl.value)),
                     child: OptionCard(
                         // cardQuestion: widget.dareList[
                         //     Random().nextInt(widget.dareList.length - 1)],
@@ -154,7 +143,18 @@ class _ChoiceScreenState extends State<ChoiceScreen>
                         cardType: QuestionCard.dare())),
                 Align(
                     alignment: Alignment(
-                        (_animCntrl.value - 0.1), -(_animCntrl.value - 0.1)),
+                        -(_animCntrl.value - 0.04), -(_animCntrl.value - 0.04)),
+                    child: OptionCard(
+                        // cardQuestion: widget.truthList[
+                        //     Random().nextInt(widget.truthList.length - 1)],
+                        onTap: () {
+                          runAnimationForward();
+                          onTapQuestionCard(CardType.truth);
+                        },
+                        cardType: QuestionCard.truth())),
+                Align(
+                    alignment: Alignment(
+                        (_animCntrl.value - 0.04), -(_animCntrl.value - 0.04)),
                     child: OptionCard(
                         // cardQuestion: widget.dareList[
                         //     Random().nextInt(widget.dareList.length - 1)],
@@ -170,9 +170,13 @@ class _ChoiceScreenState extends State<ChoiceScreen>
   }
 
   onTapQuestionCard(CardType newCardTpe) {
-    String message = newCardTpe == CardType.truth
-        ? widget.truthList[Random().nextInt(widget.truthList.length)]
-        : widget.dareList[Random().nextInt(widget.dareList.length)];
+    String message = "Undefined";
+    if (newCardTpe == CardType.truth && widget.truthList.isNotEmpty) {
+      message = widget.truthList[Random().nextInt(widget.truthList.length)];
+    } else if (newCardTpe == CardType.dare && widget.dareList.isNotEmpty) {
+      widget.dareList[Random().nextInt(widget.dareList.length)];
+    }
+
     setState(() {
       chosenCard = QuestionCard(type: newCardTpe, question: message);
     });
@@ -211,12 +215,14 @@ class OptionCard extends StatelessWidget {
                   ? MainAxisAlignment.spaceAround
                   : MainAxisAlignment.center,
               children: [
-                Icon(
-                  cardType.type == CardType.truth
-                      ? Icons.question_mark
-                      : Icons.warning,
-                  size: 100,
-                  color: Theme.of(context).colorScheme.outline,
+                FittedBox(
+                  child: Icon(
+                    cardType.type == CardType.truth
+                        ? Icons.question_mark
+                        : Icons.warning,
+                    size: 100,
+                    color: Theme.of(context).colorScheme.outline,
+                  ),
                 ),
                 Text(
                   cardType.question ?? "",
