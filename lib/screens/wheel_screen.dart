@@ -97,12 +97,16 @@ class _WheelScreenState extends State<WheelScreen> {
                     setState(() {
                       randomPlayerIndex =
                           Fortune.randomInt(0, widget.names.length);
+                      print(randomPlayerIndex);
+                      print(Random().nextInt(widget.names.length));
+                      int randomPlayerIndexFixed =
+                          randomPlayerIndexFixer(randomPlayerIndex);
+                      print(randomPlayerIndexFixed);
+
+                      // randomPlayerIndex < 0 ? randomPlayerIndex - 1 : 0;
+                      selected.add(randomPlayerIndexFixed);
+                      selectedSmall.add(randomPlayerIndexFixed);
                     });
-                    int randomPlayerIndexFixed =
-                        randomPlayerIndexFixer(randomPlayerIndex);
-                    // randomPlayerIndex < 0 ? randomPlayerIndex - 1 : 0;
-                    selected.add(randomPlayerIndexFixed);
-                    selectedSmall.add(randomPlayerIndexFixed);
                   },
                   selected: selected.stream,
                   items: fortuneItems,
@@ -189,8 +193,8 @@ class _WheelScreenState extends State<WheelScreen> {
   }
 
   randomPlayerIndexFixer(int randomPlayerIndex) {
-    int randomPlayerIndexFixed =
-        randomPlayerIndex < 0 ? randomPlayerIndex - 1 : 0;
+    // print("z $randomPlayerIndex");
+    int randomPlayerIndexFixed = randomPlayerIndex == 0 ? 0 : randomPlayerIndex;
     return randomPlayerIndexFixed;
   }
 }

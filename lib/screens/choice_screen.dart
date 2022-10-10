@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 
-import 'dart:math';
+import 'dart:math' as math;
+import 'dart:developer' as dev;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -28,6 +29,7 @@ class _ChoiceScreenState extends State<ChoiceScreen>
   late QuestionCard chosenCard = QuestionCard(type: CardType.undefined);
   @override
   void initState() {
+    dev.log("Choices for ${widget.chosenOne}");
     _animCntrl = AnimationController(
         value: 2.5,
         reverseDuration: const Duration(milliseconds: 300),
@@ -170,11 +172,16 @@ class _ChoiceScreenState extends State<ChoiceScreen>
   }
 
   onTapQuestionCard(CardType newCardTpe) {
+    print(widget.truthList.toString() + widget.dareList.toString());
     String message = "Undefined";
     if (newCardTpe == CardType.truth && widget.truthList.isNotEmpty) {
-      message = widget.truthList[Random().nextInt(widget.truthList.length)];
+      print("truth");
+      message =
+          widget.truthList[math.Random().nextInt(widget.truthList.length)];
     } else if (newCardTpe == CardType.dare && widget.dareList.isNotEmpty) {
-      widget.dareList[Random().nextInt(widget.dareList.length)];
+      print("dare");
+
+      message = widget.dareList[math.Random().nextInt(widget.dareList.length)];
     }
 
     setState(() {
