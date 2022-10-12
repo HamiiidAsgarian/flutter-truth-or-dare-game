@@ -112,7 +112,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                     setLocalDares();
                                   }))));
                     },
-                    text: "Make dare",
+                    text: "Make Dare",
                     color: Theme.of(context).colorScheme.secondary,
                     icon: Icons.add),
               ],

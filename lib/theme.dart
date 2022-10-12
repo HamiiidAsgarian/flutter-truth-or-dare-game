@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 class CustomTheme {
   static List<Color> fortuneColors = [
-    Colors.red,
-    Colors.green,
-    Colors.blue,
-    Colors.yellow,
+    Colors.redAccent,
+    Colors.greenAccent,
+    Colors.blueAccent,
+    Colors.yellowAccent,
     Colors.pink,
     Colors.purple,
     Colors.amberAccent,
@@ -15,7 +15,7 @@ class CustomTheme {
   ];
 
   static Color mainGreen = const Color.fromARGB(255, 0, 129, 17);
-  static Color mainRed = const Color.fromARGB(255, 241, 160, 8);
+  static Color mainRed = Color.fromARGB(255, 255, 169, 70);
   static Color mainBlue = Colors.blue;
   static Color mainWhite = Colors.white;
   static Color mainBlack = Color.fromARGB(255, 18, 22, 24);

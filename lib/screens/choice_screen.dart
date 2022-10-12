@@ -76,10 +76,11 @@ class _ChoiceScreenState extends State<ChoiceScreen>
           child: Column(children: [
             Text(
               "It's your turn ${widget.chosenOne}!",
-              style: TextStyle(color: Theme.of(context).colorScheme.outline),
+              style: TextStyle(
+                  fontSize: 20, color: Theme.of(context).colorScheme.outline),
             ),
             Text(
-              "Select one of these cards",
+              "Select one of the cards",
               style: TextStyle(color: Theme.of(context).colorScheme.outline),
             ),
             Expanded(

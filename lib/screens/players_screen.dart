@@ -33,7 +33,7 @@ class _PlayersScreenState extends State<PlayersScreen> {
     return Scaffold(
       backgroundColor: Theme.of(context).colorScheme.background,
       appBar: AppBar(
-        title: Text('players',
+        title: Text('Players',
             style: Theme.of(context)
                 .textTheme
                 .titleMedium!

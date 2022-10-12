@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mafia/theme.dart';
 
 class CustomIconButton extends StatelessWidget {
   const CustomIconButton({Key? key, this.icon, required this.onTap})
@@ -108,11 +109,13 @@ class _CustomAnimatedCardState extends State<CustomAnimatedCard>
           // padding: const EdgeInsets.symmetric(vertical: 5),
           child: Container(
             decoration: BoxDecoration(borderRadius: BorderRadius.circular(5)),
-            padding: const EdgeInsets.symmetric(horizontal: 5),
+            padding: const EdgeInsets.symmetric(horizontal: 15),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Expanded(child: Text(widget.text)),
+                Expanded(
+                    child: Text(widget.text,
+                        style: Theme.of(context).textTheme.titleSmall!)),
                 CustomIconButton(
                   onTap: () {
                     widget.onClose();
