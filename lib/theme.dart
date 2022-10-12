@@ -18,7 +18,7 @@ class CustomTheme {
   static Color mainRed = const Color.fromARGB(255, 241, 160, 8);
   static Color mainBlue = Colors.blue;
   static Color mainWhite = Colors.white;
-  static Color mainBlack = Colors.blueGrey.shade800;
+  static Color mainBlack = Color.fromARGB(255, 18, 22, 24);
   static TextStyle titleMedium =
       TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: mainBlack);
   const CustomTheme();

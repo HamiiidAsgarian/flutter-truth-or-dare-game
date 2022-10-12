@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
   getLocalNames() async {
     final prefs = await _prefs;
     // setState(() {
-    names = prefs.getStringList("names") ?? ['Defult Name1'];
+    names = prefs.getStringList("names") ?? ['Defult Name1, Hamiiid'];
     // });
     log("get Local Names success => $names");
   }
