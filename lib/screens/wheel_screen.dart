@@ -32,18 +32,20 @@ class _WheelScreenState extends State<WheelScreen> {
   void initState() {
     super.initState();
     randomPlayerIndex = Random().nextInt(widget.names.length);
-    for (var element in widget.names) {
-      fortuneItems.add(
-        FortuneItem(
-            style: FortuneItemStyle(
-                borderColor: Colors.white,
-                borderWidth: 5,
-                color: Colors
-                    .primaries[Random().nextInt(Colors.primaries.length)]),
-            child: Text(element, style: CustomTheme.titleMedium)),
-      );
+
+    for (int i = 0; i < widget.names.length; i++) {
+      fortuneItems.add(FortuneItem(
+          style: FortuneItemStyle(
+            borderColor: Colors.white,
+            borderWidth: 5,
+            color: i < 10
+                ? CustomTheme.fortuneColors[i]
+                : CustomTheme.fortuneColors[i ~/ 10],
+
+            // .primaries[Random().nextInt(Colors.primaries.length)]
+          ),
+          child: Text(widget.names[i], style: CustomTheme.titleMedium)));
     }
-    // selected.add(1);
   }
 
   @override
@@ -198,51 +200,3 @@ class _WheelScreenState extends State<WheelScreen> {
     return randomPlayerIndexFixed;
   }
 }
-
-
-//  CupertinoButton(
-//                 child: Text(" s"),
-//                 onPressed: () {
-//                   setState(() {
-//                     selected2.add(Random().nextInt(widget.names.length - 1));
-//                   });
-//                 }),
-//             myFortuneWheel(widget.names, selected2, () {
-//               setState(() {
-//                 selected2.add(0);
-//               });
-//             }),
-// myFortuneWheel(
-//     List<String> namesList, StreamController<int> selected, Function onFling) {
-//   List<Color> colors = [
-//     Colors.red,
-//     Colors.green,
-//     Colors.blue,
-//     Colors.yellow,
-//     Colors.pink,
-//     Colors.purple,
-//     Colors.amberAccent,
-//     Colors.blue,
-//     Colors.brown,
-//     Colors.orange
-//   ];
-//   return SizedBox(
-//     width: 500,
-//     height: 500,
-//     child: FortuneWheel(
-//         onFling: () => onFling(),
-//         animateFirst: false,
-//         selected: selected.stream,
-//         items: <FortuneItem>[
-//           for (int i = 0; i < namesList.length; i++)
-//             FortuneItem(
-//                 style: FortuneItemStyle(
-//                     borderColor: Colors.white,
-//                     borderWidth: 5,
-//                     color: i < 10 ? colors[i] : colors[i ~/ 10]
-//                     // .primaries[Random().nextInt(Colors.primaries.length)]
-//                     ),
-//                 child: Text(namesList[i]))
-//         ]),
-//   );
-// }

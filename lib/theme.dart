@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CustomTheme {
+  static List<Color> fortuneColors = [
+    Colors.red,
+    Colors.green,
+    Colors.blue,
+    Colors.yellow,
+    Colors.pink,
+    Colors.purple,
+    Colors.amberAccent,
+    Colors.blue,
+    Colors.brown,
+    Colors.orange
+  ];
+
   static Color mainGreen = const Color.fromARGB(255, 0, 129, 17);
   static Color mainRed = const Color.fromARGB(255, 241, 160, 8);
   static Color mainBlue = Colors.blue;

@@ -39,9 +39,7 @@ class _ChoiceScreenState extends State<ChoiceScreen>
         duration: const Duration(milliseconds: 300));
     _animCntrl.reverse();
 
-    _animCntrl.addListener((() => setState(() {
-          // print(_animCntrl.value);
-        })));
+    _animCntrl.addListener((() => setState(() {})));
 
     super.initState();
   }

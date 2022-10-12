@@ -18,18 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
   final Future<SharedPreferences> _prefs = SharedPreferences.getInstance();
 
   List<String> names = ['no name'];
-  List<String> truths = [
-    'Who is Your Arch enemy?',
-    'What is your ugliest bodypart?',
-    'Which friend do you hate the most?',
-    'What is your dumbest question that you have ever asked teacher?'
-  ];
-  List<String> dares = [
-    'Drink Pot water',
-    'Call 991 and screem your name',
-    'Eat raw fish',
-    'Bully the scools bully'
-  ];
+  List<String> truths = [];
+  List<String> dares = [];
 
   @override
   void initState() {
@@ -149,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
   getLocalNames() async {
     final prefs = await _prefs;
     // setState(() {
-    names = prefs.getStringList("names") ?? [];
+    names = prefs.getStringList("names") ?? ['Defult Name1'];
     // });
     log("get Local Names success => $names");
   }
@@ -159,15 +149,21 @@ class _HomeScreenState extends State<HomeScreen> {
 
     await prefs.setStringList("names", names).then((value) {
       log("set Local Names success = > $names");
-      return names;
+      return (names.isNotEmpty ? names : []);
     });
   }
 
   getLocalTruths() async {
     final prefs = await _prefs;
     // setState(() {
-    truths = prefs.getStringList("truths") ?? [];
-    // });
+    truths = prefs.getStringList("truths") ??
+        [
+          'Who is Your arch enemy?',
+          'What is your worst talent?',
+          'Which friend do you hate the most?',
+          'What is the dumbest question that you have ever asked teacher?'
+        ];
+
     log("get Local truths success => $truths");
   }
 
@@ -183,7 +179,13 @@ class _HomeScreenState extends State<HomeScreen> {
   getLocalDares() async {
     final prefs = await _prefs;
 
-    dares = prefs.getStringList("dares") ?? [];
+    dares = prefs.getStringList("dares") ??
+        [
+          'Drink Pot water',
+          'Call 991 and screem your name',
+          'Eat raw fish',
+          'Bully scool\'s bully'
+        ];
 
     log("get Local dares success => $dares");
   }
@@ -193,6 +195,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
     await prefs.setStringList("dares", dares).then((value) {
       log("set Local dares success = > $dares");
+
       return dares;
     });
   }
