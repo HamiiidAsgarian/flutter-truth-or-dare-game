@@ -3,8 +3,8 @@ import 'dart:math';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_fortune_wheel/flutter_fortune_wheel.dart';
-import 'package:mafia/screens/choice_screen.dart';
-import 'package:mafia/theme.dart';
+import 'package:truthordare/screens/choice_screen.dart';
+import 'package:truthordare/theme.dart';
 
 class WheelScreen extends StatefulWidget {
   const WheelScreen(
@@ -99,11 +99,11 @@ class _WheelScreenState extends State<WheelScreen> {
                     setState(() {
                       randomPlayerIndex =
                           Fortune.randomInt(0, widget.names.length);
-                      print(randomPlayerIndex);
-                      print(Random().nextInt(widget.names.length));
+                      // print(randomPlayerIndex);
+                      // print(Random().nextInt(widget.names.length));
                       int randomPlayerIndexFixed =
                           randomPlayerIndexFixer(randomPlayerIndex);
-                      print(randomPlayerIndexFixed);
+                      // print(randomPlayerIndexFixed);
 
                       // randomPlayerIndex < 0 ? randomPlayerIndex - 1 : 0;
                       selected.add(randomPlayerIndexFixed);

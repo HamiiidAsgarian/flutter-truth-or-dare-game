@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:mafia/widgets/widgets.dart';
+import 'package:truthordare/widgets/widgets.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen(
@@ -30,7 +30,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
     return Scaffold(
       backgroundColor: mainColor,
       appBar: AppBar(
-        title: Text('${widget.title}'),
+        title: Text(widget.title),
         centerTitle: true,
         elevation: 0,
         backgroundColor: mainColor,

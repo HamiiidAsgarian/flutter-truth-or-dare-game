@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mafia/theme.dart';
 
 class CustomIconButton extends StatelessWidget {
   const CustomIconButton({Key? key, this.icon, required this.onTap})

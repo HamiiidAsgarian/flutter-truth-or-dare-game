@@ -15,10 +15,10 @@ class CustomTheme {
   ];
 
   static Color mainGreen = const Color.fromARGB(255, 0, 129, 17);
-  static Color mainRed = Color.fromARGB(255, 255, 169, 70);
+  static Color mainRed = const Color.fromARGB(255, 255, 169, 70);
   static Color mainBlue = Colors.blue;
   static Color mainWhite = Colors.white;
-  static Color mainBlack = Color.fromARGB(255, 18, 22, 24);
+  static Color mainBlack = const Color.fromARGB(255, 18, 22, 24);
   static TextStyle titleMedium =
       TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: mainBlack);
   const CustomTheme();

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mafia/screens/home_screen.dart';
-import 'package:mafia/theme.dart';
+import 'package:truthordare/screens/home_screen.dart';
+import 'package:truthordare/theme.dart';
 // ignore: unused_import
 
 void main() {

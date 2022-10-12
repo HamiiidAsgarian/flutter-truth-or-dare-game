@@ -1,8 +1,8 @@
 import 'dart:developer';
 
 import 'package:flutter/material.dart';
-import 'package:mafia/screens/players_screen.dart';
-import 'package:mafia/screens/questions_screen.dart';
+import 'package:truthordare/screens/players_screen.dart';
+import 'package:truthordare/screens/questions_screen.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import '../widgets/widgets.dart';
@@ -139,7 +139,7 @@ class _HomeScreenState extends State<HomeScreen> {
   getLocalNames() async {
     final prefs = await _prefs;
     // setState(() {
-    names = prefs.getStringList("names") ?? ['Defult Name1, Hamiiid'];
+    names = prefs.getStringList("names") ?? ['Defult Name1', 'Hamiiid'];
     // });
     log("get Local Names success => $names");
   }

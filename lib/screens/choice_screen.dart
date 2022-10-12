@@ -5,7 +5,7 @@ import 'dart:developer' as dev;
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:mafia/models.dart';
+import 'package:truthordare/models.dart';
 
 class ChoiceScreen extends StatefulWidget {
   const ChoiceScreen(
@@ -171,14 +171,14 @@ class _ChoiceScreenState extends State<ChoiceScreen>
   }
 
   onTapQuestionCard(CardType newCardTpe) {
-    print(widget.truthList.toString() + widget.dareList.toString());
+    // print(widget.truthList.toString() + widget.dareList.toString());
     String message = "Undefined";
     if (newCardTpe == CardType.truth && widget.truthList.isNotEmpty) {
-      print("truth");
+      // print("truth");
       message =
           widget.truthList[math.Random().nextInt(widget.truthList.length)];
     } else if (newCardTpe == CardType.dare && widget.dareList.isNotEmpty) {
-      print("dare");
+      // print("dare");
 
       message = widget.dareList[math.Random().nextInt(widget.dareList.length)];
     }

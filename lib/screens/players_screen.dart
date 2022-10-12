@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mafia/screens/wheel_screen.dart';
-import 'package:mafia/widgets/widgets.dart';
+import 'package:truthordare/screens/wheel_screen.dart';
+import 'package:truthordare/widgets/widgets.dart';
 
 class PlayersScreen extends StatefulWidget {
   const PlayersScreen(
