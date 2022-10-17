@@ -14,9 +14,3 @@ class QuestionCard {
     return QuestionCard(question: dareMessage, type: CardType.dare);
   }
 }
-
-// class Test {
-//   run() {
-//     QuestionCard.truth("truthMessage");
-//   }
-// }
